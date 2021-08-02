@@ -1,4 +1,5 @@
-SRCS            =   test.c
+SRCS            = fractol.c complex_operations.c mlx_hooks.c ft_atof.c ft_init.c \
+					draw.c mandelbrot.c julia.c
 OBJS            = $(SRCS:.c=.o)
 CC              = gcc
 RM              = rm -f
