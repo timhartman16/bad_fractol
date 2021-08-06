@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tanastac <tanastac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/04 10:28:26 by tanastac          #+#    #+#             */
+/*   Updated: 2021/08/04 13:55:19 by tanastac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
@@ -46,8 +58,8 @@ int		ft_check_uslovie(t_fractol *fract, t_complex *z, t_complex *c);
 int		ft_close(void);
 int		key_press(int key, t_fractol *fract);
 int		ft_mouse_zoom(int button, int x, int y, t_fractol *fract);
-float	ft_atof(char *s);
-void	ft_init_fractol(t_fractol *fract);
+double	ft_atof(char *s);
+void	ft_init_fractol(t_fractol *fract, int argc, char **argv);
 int		ft_fractol_name_check(t_fractol *fract, char **argv);
 void	ft_wrong_parameters(void);
 void	ft_draw(t_fractol *fract);
