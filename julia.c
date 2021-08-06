@@ -6,7 +6,7 @@
 /*   By: tanastac <tanastac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 10:28:09 by tanastac          #+#    #+#             */
-/*   Updated: 2021/08/04 10:28:11 by tanastac         ###   ########.fr       */
+/*   Updated: 2021/08/06 13:58:01 by tanastac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	ft_draw_julia(t_fractol *fract)
 	t_complex	c;
 	t_complex	z;
 
-	fract->x = -1;
+	fract->x = 0;
 	ft_init_start_params(fract, &c);
 	while (fract->x < fract->win_size)
 	{
-		fract->y = -1;
+		fract->y = 0;
 		while (fract->y < fract->win_size)
 		{
 			z.x = fract->x / fract->zoom + fract->x1;
@@ -44,5 +44,5 @@ void	ft_draw_julia(t_fractol *fract)
 		}
 		fract->x++;
 	}
-	mlx_put_image_to_window(fract->mlx, fract->win, fract->img, -1, -1);
+	mlx_put_image_to_window(fract->mlx, fract->win, fract->img, 0, 0);
 }

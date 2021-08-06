@@ -6,7 +6,7 @@
 /*   By: tanastac <tanastac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 10:28:26 by tanastac          #+#    #+#             */
-/*   Updated: 2021/08/04 13:55:19 by tanastac         ###   ########.fr       */
+/*   Updated: 2021/08/06 12:03:43 by tanastac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		key_press(int key, t_fractol *fract);
 int		ft_mouse_zoom(int button, int x, int y, t_fractol *fract);
 double	ft_atof(char *s);
 void	ft_init_fractol(t_fractol *fract, int argc, char **argv);
-int		ft_fractol_name_check(t_fractol *fract, char **argv);
+int		ft_fractol_name_check(t_fractol *fract, int argc, char **argv);
 void	ft_wrong_parameters(void);
 void	ft_draw(t_fractol *fract);
 void	put_pxl_to_img(t_fractol *fract, int x, int y, int color);

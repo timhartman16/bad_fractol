@@ -6,17 +6,18 @@
 /*   By: tanastac <tanastac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 10:24:26 by tanastac          #+#    #+#             */
-/*   Updated: 2021/08/04 13:55:38 by tanastac         ###   ########.fr       */
+/*   Updated: 2021/08/06 14:20:54 by tanastac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	ft_fractol_name_check(t_fractol *fract, char **argv)
+int	ft_fractol_name_check(t_fractol *fract, int argc, char **argv)
 {
-	if (ft_strcmp(argv[1], "Mandelbrot") == 0)
+	if (ft_strcmp(argv[1], "Mandelbrot") == 0 && argc == 2)
 		fract->name = 0;
-	else if (ft_strcmp(argv[1], "Julia") == 0)
+	else if ((ft_strcmp(argv[1], "Julia") == 0 && argc == 2)
+		|| (ft_strcmp(argv[1], "Julia") == 0 && argc == 4))
 		fract->name = 1;
 	else
 		return (0);
@@ -53,14 +54,14 @@ int	main(int argc, char **argv)
 
 	if (argc == 2 || argc == 4)
 	{
-		if (ft_fractol_name_check(&fract, argv) == 0)
+		if (ft_fractol_name_check(&fract, argc, argv) == 0)
 		{
 			ft_wrong_parameters();
 			return (0);
 		}
 		ft_init_fractol(&fract, argc, argv);
-		if (fract.c_x >= 1 || fract.c_x <= -1
-			|| fract.c_y >= 1 || fract.c_y <= -1)
+		if (fract.c_x > 1 || fract.c_x < -1
+			|| fract.c_y > 1 || fract.c_y < -1)
 		{
 			ft_wrong_parameters();
 			return (0);

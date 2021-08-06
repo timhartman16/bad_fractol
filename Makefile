@@ -17,7 +17,6 @@ $(NAME):	$(LIBFT) $(OBJS)  $(LIBFT)
 $(LIBFT):
 			$(MAKE) -C libft
 
-
 clean:
 			$(RM) $(OBJS)
 
